@@ -11,20 +11,20 @@ window.onload = function() {
         "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus", 0],
     };
 
-    function loadImg(add) {
+    function img(add) {
         var imgCont = ["assets/img/avion.png", "assets/img/barco.png", "assets/img/bici.png", "assets/img/camioneta.png", "assets/img/carro.png"];
         var imgArea = document.getElementsByClassName("img-questions")[0];
         var questionImg = imgCont[add];
         imgArea.setAttribute('src', questionImg);
     }
 
-    function loadQuestion(add) {;
+    function questions(add) {;
         var question = Object.keys(quiz)[add];
         questionSite.innerHTML = "";
         questionSite.innerHTML = question;
     }
 
-    function loadAnswers(add) {
+    function answer(add) {
         var answers = quiz[Object.keys(quiz)[add]];
         answerSite.innerHTML = "";
         for (i = 0; i < answers.length - 1; i += 1) {
@@ -58,12 +58,12 @@ window.onload = function() {
             }
             if (cont < Object.keys(quiz).length - 1) {
                 cont += 1
-                loadImg(cont);
-                loadQuestion(cont);
-                loadAnswers(cont);
+                img(cont);
+                questions(cont);
+                answer(cont);
             } else {
-                questionSite.innerHTML = "Finalizaste el cuestionario!"
-                answerSite.innerHTML = ""
+                questionSite.innerHTML = "The End!, Sorry, your score will be after in just a  moment. We are working for you... ";
+                answerSite.innerHTML = "";
             }
         }
     }
@@ -72,8 +72,8 @@ window.onload = function() {
 
         var checker = document.getElementsByClassName("checker")[0];
         var createDiv = document.createElement("div");
-        var txt = document.createTextNode(cont + 1);
-        createDiv.appendChild(txt);
+        var text = document.createTextNode(cont + 1);
+        createDiv.appendChild(text);
         if (bool) {
             createDiv.className += "correct"
             checker.appendChild(createDiv);
@@ -83,7 +83,11 @@ window.onload = function() {
         }
     }
 
-    loadQuestion(cont);
-    loadAnswers(cont);
-    loadImg(cont);
+    function displayScore() {
+
+    }
+
+    questions(cont);
+    answer(cont);
+    img(cont);
 };
