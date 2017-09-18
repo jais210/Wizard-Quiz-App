@@ -41,20 +41,20 @@ window.onload = function() {
             var text = document.createTextNode(answers[i])
             createBtn.appendChild(text);
             createDiv.appendChild(createBtn);
-            createDiv.addEventListener("click", checkAnswer(i, answers));
+            createDiv.addEventListener("click", checkAns(i, answers));
             answerSite.appendChild(createDiv);
         }
     }
 
-    function checkAnswer(i, arr) {
+    function checkAns(i, arr) {
 
         return function() {
             var userAnswer = i;
             var correctAnswer = arr[arr.length - 1];
             if (userAnswer === correctAnswer) {
-                addChecker(true)
+                addCheck(true)
             } else {
-                addChecker(false)
+                addCheck(false)
             }
             if (cont < Object.keys(quiz).length - 1) {
                 cont += 1
@@ -68,18 +68,18 @@ window.onload = function() {
         }
     }
 
-    function addChecker(bool) {
+    function addCheck(bool) {
 
-        var checker = document.getElementsByClassName("checker")[0];
+        var check = document.getElementsByClassName("check")[0];
         var createDiv = document.createElement("div");
         var text = document.createTextNode(cont + 1);
         createDiv.appendChild(text);
         if (bool) {
             createDiv.className += "correct"
-            checker.appendChild(createDiv);
+            check.appendChild(createDiv);
         } else {
             createDiv.className += "false"
-            checker.appendChild(createDiv);
+            check.appendChild(createDiv);
         }
     }
 
