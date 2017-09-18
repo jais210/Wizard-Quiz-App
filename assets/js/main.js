@@ -1,7 +1,7 @@
 window.onload = function() {
     var questionSite = document.getElementsByClassName("questions")[0];
     var answerSite = document.getElementsByClassName("answers")[0];
-    var current = 0;
+    var cont = 0;
 
 
     var quiz = {
@@ -12,24 +12,22 @@ window.onload = function() {
         "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus", 0],
     };
 
-    function loadImg(curr) {
+    function loadImg(add) {
         var imgCont = ["assets/img/avion.png", "assets/img/barco.png", "assets/img/bici.png", "assets/img/camioneta.png", "assets/img/carro.png"];
         var imgArea = document.getElementsByClassName("img-questions")[0];
-        var questionimg = imgCont[curr];
+        var questionimg = imgCont[add];
         imgArea.setAttribute('src', questionimg);
     }
 
-    function loadQuestion(curr) {;
-        var question = Object.keys(quiz)[curr];
+    function loadQuestion(add) {;
+        var question = Object.keys(quiz)[add];
         questionSite.innerHTML = "";
         questionSite.innerHTML = question;
     }
 
-    function loadAnswers(curr) {
-        var answers = quiz[Object.keys(quiz)[curr]];
-        //vacía el campo de respuesta
+    function loadAnswers(add) {
+        var answers = quiz[Object.keys(quiz)[add]];
         answerSite.innerHTML = "";
-        //agregar todas las respuestas posibles el área de respuesta
         for (i = 0; i < answers.length - 1; i += 1) {
             var createDiv = document.createElement("div");
             createDiv.setAttribute('class', 'col-lg-4 col-sm-4 col-xs-12');
@@ -44,17 +42,13 @@ window.onload = function() {
             var text = document.createTextNode(answers[i])
             createBtn.appendChild(text);
             createDiv.appendChild(createBtn);
-            //esto añade la función onclick en la respuesta, ejecutando una función para verificar la corrección
             createDiv.addEventListener("click", checkAnswer(i, answers));
             answerSite.appendChild(createDiv);
         }
     }
 
     function checkAnswer(i, arr) {
-        // esta es la función que se ejecutará cuando se haga clic en una de las respuestas
-        // compruebe si la respuesta dada es la misma que la respuesta correcta
-        // después de esto, compruebe si es la última pregunta del cuestionario
-        // si es la última pregunta, vacía la zona de respuesta y deja que el usuario sepa que terminó
+
         return function() {
             var userAnswer = i;
             var correctAnswer = arr[arr.length - 1];
@@ -63,11 +57,11 @@ window.onload = function() {
             } else {
                 addChecker(false)
             }
-            if (current < Object.keys(quiz).length - 1) {
-                current += 1
-                loadImg(current);
-                loadQuestion(current);
-                loadAnswers(current);
+            if (cont < Object.keys(quiz).length - 1) {
+                cont += 1
+                loadImg(cont);
+                loadQuestion(cont);
+                loadAnswers(cont);
             } else {
                 questionSite.innerHTML = "Finalizaste el cuestionario!"
                 answerSite.innerHTML = ""
@@ -76,10 +70,10 @@ window.onload = function() {
     }
 
     function addChecker(bool) {
-        // agrega un elemento div a la página para ver si es verdadero / falso
+
         var checker = document.getElementsByClassName("checker")[0];
         var createDiv = document.createElement("div");
-        var txt = document.createTextNode(current + 1);
+        var txt = document.createTextNode(cont + 1);
         createDiv.appendChild(txt);
         if (bool) {
             createDiv.className += "correct"
@@ -90,8 +84,7 @@ window.onload = function() {
         }
     }
 
-    //inicie el cuestionario enseguida
-    loadQuestion(current);
-    loadAnswers(current);
-    loadImg(current);
+    loadQuestion(cont);
+    loadAnswers(cont);
+    loadImg(cont);
 };
