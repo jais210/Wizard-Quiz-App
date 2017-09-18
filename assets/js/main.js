@@ -62,7 +62,7 @@ window.onload = function() {
                 questions(cont);
                 answer(cont);
             } else {
-                questionSite.innerHTML = "The End!, Sorry, your score will be after in just a  moment. We are working for you... ";
+                questionSite.innerHTML = "The End!!!, Sorry, your score will be after in just a  moment. We are working for you... ";
                 answerSite.innerHTML = "";
             }
         }
