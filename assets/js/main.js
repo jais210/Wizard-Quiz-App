@@ -70,16 +70,16 @@ window.onload = function() {
 
     function addCheck(bool) {
 
-        var check = document.getElementsByClassName("check")[0];
+        var checker = document.getElementsByClassName("checker")[0];
         var createDiv = document.createElement("div");
         var text = document.createTextNode(cont + 1);
         createDiv.appendChild(text);
         if (bool) {
             createDiv.className += "correct"
-            check.appendChild(createDiv);
+            checker.appendChild(createDiv);
         } else {
             createDiv.className += "false"
-            check.appendChild(createDiv);
+            checker.appendChild(createDiv);
         }
     }
 
