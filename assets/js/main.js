@@ -4,9 +4,9 @@ window.onload = function() {
     var cont = 0;
 
     var quiz = {
-        "Who was the pinter of heavy forms?": ["Botero", "Velasquez", "Picasso", 0],
-        "Who is the writer of Rayuela?": ["Cortazar", "Vargas Llosa", "Bolaños", 0],
-        "What is the real name of Quino?": ["Joaquin Lavado", "Jeremias Gamboa", "Roberto Bolaños", 0],
+        "Who was the pinter of heavy forms?": ["Botero", "Velásquez", "Picasso", 0],
+        "Who is the writer of Rayuela?": ["Cortázar", "Vargas Llosa", "Bolaños", 0],
+        "What is the real name of Quino?": ["Joaquín Lavado", "Jeremías Gamboa", "Roberto Bolaños", 0],
         "What is The most popular cartoon in Argentina?": ["Mafalda", "Condorito", "Lulú", 0],
         "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus", 0],
     };
