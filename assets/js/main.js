@@ -3,20 +3,19 @@ window.onload = function() {
     var answerSite = document.getElementsByClassName("answers")[0];
     var cont = 0;
 
-
     var quiz = {
         "Who was the pinter of heavy forms?": ["Botero", "Velasquez", "Picasso", 0],
         "Who is the writer of Rayuela?": ["Cortazar", "Vargas Llosa", "Bolaños", 0],
         "What is the real name of Quino?": ["Joaquin Lavado", "Jeremias Gamboa", "Roberto Bolaños", 0],
-        "What is The most popular story in Argentina?": ["Mafalda", "Condorito", "Lulú", 0],
+        "What is The most popular cartoon in Argentina?": ["Mafalda", "Condorito", "Lulú", 0],
         "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus", 0],
     };
 
     function loadImg(add) {
         var imgCont = ["assets/img/avion.png", "assets/img/barco.png", "assets/img/bici.png", "assets/img/camioneta.png", "assets/img/carro.png"];
         var imgArea = document.getElementsByClassName("img-questions")[0];
-        var questionimg = imgCont[add];
-        imgArea.setAttribute('src', questionimg);
+        var questionImg = imgCont[add];
+        imgArea.setAttribute('src', questionImg);
     }
 
     function loadQuestion(add) {;
