@@ -1,16 +1,25 @@
 window.onload = function() {
-    var questionSite = document.getElementsByClassName("questions")[0];
-    var answerSite = document.getElementsByClassName("answers")[0];
-    var cont = 0;
-
-    var quiz = {
-        "Who was the pinter of heavy forms?": ["Botero", "Velásquez", "Picasso", 0],
-        "Who is the writer of Rayuela?": ["Cortázar", "Vargas Llosa", "Bolaños", 0],
-        "What is the real name of Quino?": ["Joaquín Lavado", "Jeremías Gamboa", "Roberto Bolaños", 0],
-        "What is The most popular cartoon in Argentina?": ["Mafalda", "Condorito", "Lulú", 0],
-        "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus", 0],
+    var cuestionario = [
+        {pregunta1:'Who was the pinter of heavy forms?',
+         respuesta1:'Botero',
+        respuesta2:'Velásquez',
+        respuesta3:'Picaso'},
+        {pregunta2:'Who is the writer of Rayuela?',
+        respuesta1:'Cortázar',
+        respuesta2:'Vargas Llosa',
+        respuesta3:'Bolaños'},
+        {pregunta3:'What is the real name of Quino?',
+        respuesta1:'Joaquín Lavado',
+        respuesta2:'Geremías Gamboa',
+        respuesta3:'Roberto Bolaños'},          
+    ]
+      
+        // "What is The most popular cartoon in Argentina?": ["Mafalda", "Condorito", "Lulú"],
+        // "Who is the writer of The Antichrist?": ["Nietzsche", "Gogol", "Camus"],
     };
-
+    var questionSite = document.getElementsByClassName("questions");
+    var answerSite = document.getElementsByClassName("answers");
+    var cont = 0;
     function img(add) {
         var imgCont = ["assets/img/avion.png", "assets/img/barco.png", "assets/img/bici.png", "assets/img/camioneta.png", "assets/img/carro.png"];
         var imgArea = document.getElementsByClassName("img-questions")[0];
@@ -19,13 +28,13 @@ window.onload = function() {
     }
 
     function questions(add) {;
-        var question = Object.keys(quiz)[add];
+        var question = Object.keys(cuestionario)[add];
         questionSite.innerHTML = "";
         questionSite.innerHTML = question;
     }
 
     function answer(add) {
-        var answers = quiz[Object.keys(quiz)[add]];
+        var answers = cuestionario[Object.keys(cuestionario)[add]];
         answerSite.innerHTML = "";
         for (i = 0; i < answers.length - 1; i += 1) {
             var createDiv = document.createElement("div");
@@ -56,7 +65,7 @@ window.onload = function() {
             } else {
                 addCheck(false)
             }
-            if (cont < Object.keys(quiz).length - 1) {
+            if (cont < Object.keys(cuestionario).length - 1) {
                 cont += 1
                 img(cont);
                 questions(cont);
