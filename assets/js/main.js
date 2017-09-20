@@ -14,15 +14,15 @@ const wizar = {
         },
         {
             pregunta: 'Who is the writer of Rayuela?',
-            respuestas: ['Cortázar', 'Vargas Llosa', 'Bolaños'],
+            respuestas: ['Cortázar', 'Vargas', 'Bolaños'],
             direccionIMG: 'assets/img/barco.png',
             respuestaCorrecta: 'Cortázar'
         },
         {
             pregunta: 'What is the real name of Quino?',
-            respuestas: ['Joaquín Lavado', 'Geremías Gamboa', 'Roberto Bolaños'],
+            respuestas: ['Joaquín', 'Geremías', 'Salvador'],
             direccionIMG: 'assets/img/bici.png',
-            respuestaCorrecta: 'Joaquín Lavado'
+            respuestaCorrecta: 'Lavado'
         },
 
         {
